@@ -1,7 +1,7 @@
 15 => int interval; //Interval in seconds
 30 => int circuitlength; //Length of each circuit in seconds
 .5 => float beeplength; //Length of beep in seconds
-"ttv.wav" => string inputfile;
+"dnb.wav" => string inputfile;
 500.0 => float freq;
 
 SndBuf buf;
@@ -14,7 +14,7 @@ inputfile => buf.read;
 //Beep (end of circuit)
 beep(s, beeplength, freq);
 //Silence
-beep(s, interval-2*beeplength, 0.0);
+play(buf, interval-2*beeplength);
 //Beep again (next circuit)
 beep(s, beeplength, freq);
 
@@ -27,8 +27,8 @@ while (buf.pos()::samp < buf.length())
 	if (buf.pos()::samp < buf.length()) {
 		//Beep (end of circuit)
 		beep(s, beeplength, freq);
-		//Silence
-		beep(s, interval-2*beeplength, 0.0);
+		//Play for interval seconds
+		play(buf, interval-2*beeplength);
 		//Beep again (next circuit)
 		beep(s, beeplength, freq);
 	}
