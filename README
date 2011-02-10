@@ -1,0 +1,10 @@
+Takes in an audio file, plays for circuitlength seconds, beeps,
+pauses for interval seconds, beeps, repeats until end of audio file.
+
+Change the intervals and filenames at the top of circuittraining.ck
+
+Run with:
+chuck circuittraining.ck
+
+Output the mix to an audio file using rec.ck (not included):
+http://wiki.cs.princeton.edu/index.php/ChucK_Record
