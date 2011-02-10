@@ -30,7 +30,7 @@ while (buf.pos()::samp < buf.length())
 		//Play for interval seconds
 		play(buf, interval-2*beeplength);
 		//Beep again (next circuit)
-		beep(s, beeplength, freq);
+		beep(s, beeplength, freq*2);
 	}
 }
 
